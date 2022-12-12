@@ -362,7 +362,7 @@ release/%/bin/configtxgen: $(PROJECT_FILES)
 release/%/bin/cryptogen: $(PROJECT_FILES)
 	@echo "Building $@ for $(GOOS)-$(GOARCH)"
 	mkdir -p $(@D)
-	$(CGO_FLAGS) GOOS=$(GOOS) GOARCH=$(GOARCH) go build -o $(abspath $@) -tags "$(GO_TAGS)" -ldflags "$(GO_LDFLAGS)" $(pkgmap.$(@F))
+	$(CGO_FLAGS) GOOS=linux GOARCH=arm64 go build -o $(abspath $@) -tags "$(GO_TAGS)" -ldflags "$(GO_LDFLAGS)" $(pkgmap.$(@F))
 
 release/%/bin/idemixgen: $(PROJECT_FILES)
 	@echo "Building $@ for $(GOOS)-$(GOARCH)"
