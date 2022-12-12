@@ -1,0 +1,3 @@
+FROM ptunstad/fabric-ccenv:arm64-1.4.1
+
+COPY ./release/fabric/bin/peer /usr/local/bin
